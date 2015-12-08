@@ -36,13 +36,13 @@ $(".poster").click(function(){
 
 
 function ani(){
-    $("#proSwiper .draw").animate({"opacity": 1});
-    $("#proSwiper .swiper-slide-active .draw").animate({"opacity": 0});
+    
+    $("#proSwiper .draw").stop().animate({"opacity": 1});
+    $("#proSwiper .swiper-slide-active .draw").stop().animate({"opacity": 0});
 
     $("#proSwiper .p").removeAttr("style");
     $("#proSwiper .swiper-slide-active .p").stop().delay(600).animate({"opacity": 1}, 1200);
-
-    
+ 
 }
 
 

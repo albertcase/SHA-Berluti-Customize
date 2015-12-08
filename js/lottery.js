@@ -64,11 +64,11 @@ Lottery.prototype = {
         this.maskCtx.beginPath();
         
         if (this.drawPercentCallback) {
-            if(this.getTransparentPercent(this.maskCtx, this.width, this.height) >= 60){
+            if(this.getTransparentPercent(this.maskCtx, this.width, this.height) >= 38){
 
                 var radgrad = this.maskCtx.createRadialGradient(x, y, 0, x, y, 300);
                 radgrad.addColorStop(0, 'rgba(0,0,0,1)');
-                //radgrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                radgrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
                 this.maskCtx.fillStyle = radgrad;
                 this.maskCtx.arc(x, y, 300, 0, Math.PI * 2, true);
                 this.maskCtx.fill();
@@ -165,12 +165,13 @@ Lottery.prototype = {
             var image = new Image(),
                 _this = this;
             image.onload = function () {
+                
                 _this.width = _this.width;  //this.width
                 _this.height = _this.height;  //this.height
                 _this.resizeCanvas(_this.background, _this.width, _this.height);
                 _this.backCtx.drawImage(this, 0, 0, _this.width, _this.height);
                 _this.drawMask();
-                $(".smear").css({"opacity": 1});
+
             }
             image.src = this.lottery;
         } else if (this.lotteryType == 'text') {
@@ -236,9 +237,9 @@ function smearFun(){
 
     function drawPercent(percent) {
         drawPercentNode.innerHTML = percent + '%';
-        // if(percent >= 100){
-
-        // }
+        if(percent >= 2){
+            $(".smear").css({"opacity": 1}, 300);
+        }
     }
 
     drawPercentNode.innerHTML = '0%';

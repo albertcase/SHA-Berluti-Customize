@@ -264,7 +264,7 @@ html, body{
 .coupon{
 	width: 69%;
 	position: absolute;
-	left: 20%;
+	left: 16%;
 	top: 40%;
 	overflow: hidden;
 /*	z-index: 6;*/
@@ -369,6 +369,10 @@ html, body{
 	.contact_name,.contact_tel{
 		margin: 15% 0;
 		display: inline-block;
+	}
+
+	.smear{
+		margin: 7% 0 0 0;
 	}
 
 
