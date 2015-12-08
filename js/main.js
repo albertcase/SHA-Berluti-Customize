@@ -9,7 +9,7 @@
     hideControls: true,
     events:{
         onPlayEnd: function(){ /*your code*/
-            $(".poster").show();
+            //$(".poster").show();
         },
         onPlayStart: function(){ /*your code*/ },
         onPlayerReady: function(){ /*your code*/ }
@@ -30,13 +30,13 @@ function currentTime(){
 
 
 $(".poster").click(function(){
-    $(this).hide();
     playVideo();
+    $(this).hide();
 })
 
 
 function ani(){
-    
+
     $("#proSwiper .draw").stop().animate({"opacity": 1});
     $("#proSwiper .swiper-slide-active .draw").stop().animate({"opacity": 0});
 
@@ -46,7 +46,7 @@ function ani(){
 }
 
 
-
+// /weixin/jssdk?url=xxx
 
 
 
