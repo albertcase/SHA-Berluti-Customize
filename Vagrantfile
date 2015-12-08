@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "sha-berluti-customize"
 
   
-  config.vm.network :forwarded_port, guest: 80, host: 9102
-  config.vm.network :forwarded_port, guest: 3306, host: 33101
+  config.vm.network :forwarded_port, guest: 80, host: 9106
+  config.vm.network :forwarded_port, guest: 3306, host: 33106
   
   config.vm.network :private_network, ip: "192.168.33.10"
 
